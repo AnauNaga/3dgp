@@ -11,7 +11,7 @@ from src.torch_utils.ops import upfirdn2d
 from src.torch_utils.ops import bias_act
 
 #----------------------------------------------------------------------------
-
+#
 @misc.profiled_function
 def normalize_2nd_moment(x: torch.Tensor, dim=1, eps=1e-8) -> torch.Tensor:
     return x * (x.square().mean(dim=dim, keepdim=True) + eps).rsqrt()
