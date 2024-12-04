@@ -6,16 +6,6 @@
 
 ![Samples on ImageNet 256x256](assets/imagenet.gif)
 
-Release progress:
-- [x] Installation guide
-- [x] Training code
-- [x] Inference/visualization code
-- [x] [Datasets](https://drive.google.com/drive/folders/1yAMr1Us9gD6F5P0lCd5qiouyZ9gT5P_n)
-- [x] Data preprocessing scripts
-- [ ] ImageNet checkpoint (there is our old one available [here](https://drive.google.com/file/d/1xNnnCV-XCRxm1dP1rl0n3v7sKnh7tdec/view?usp=share_link), but it is only compatible with our [old code version](https://drive.google.com/file/d/1AtbJPZ852wTTT7q8zLXuachWhnxw1J6K/view?usp=share_link)).
-- [ ] Checkpoints for satellite datasets
-- [ ] Docker container
-
 ## Installation
 
 To install and activate the environment, run the following command:
