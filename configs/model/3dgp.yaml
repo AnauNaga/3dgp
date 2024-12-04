@@ -61,7 +61,10 @@ generator:
       radius: 0.0
       fov: 0.0001
       look_at: 0.0001
+      #fov: 0.0005
+      #look_at: 0.0005
     lr_multiplier: 0.1
+    #lr_multiplier: 0.5
     z_dim: ${model.generator.z_dim}
     c_dim: ${model.generator.c_dim}
     hid_dim: 256
