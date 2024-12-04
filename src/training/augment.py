@@ -5,7 +5,7 @@
 # and any modifications thereto.  Any use, reproduction, disclosure or
 # distribution of this software and related documentation without an express
 # license agreement from NVIDIA CORPORATION is strictly prohibited.
-
+#
 """Augmentation pipeline from the paper
 "Training Generative Adversarial Networks with Limited Data".
 Matches the original implementation by Karras et al. at
