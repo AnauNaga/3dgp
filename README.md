@@ -1,9 +1,8 @@
-# 3D generation on ImageNet [ICLR 2023]
+# 3D generation on ImageNet
 
 <a href="https://snap-research.github.io/3dgp" target="_blank">[Project page]</a>
 <a href="https://snap-research.github.io/3dgp/3dgp-paper.pdf" target="_blank">[Paper]</a>
 <a href="https://openreview.net/forum?id=U2WjB9xxZ9q" target="_blank">[OpenReview]</a>
-
 
 ## Installation
 
