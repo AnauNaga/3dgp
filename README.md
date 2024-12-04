@@ -4,7 +4,6 @@
 <a href="https://snap-research.github.io/3dgp/3dgp-paper.pdf" target="_blank">[Paper]</a>
 <a href="https://openreview.net/forum?id=U2WjB9xxZ9q" target="_blank">[OpenReview]</a>
 
-![Samples on ImageNet 256x256](assets/imagenet.gif)
 
 ## Installation
 
@@ -13,9 +12,29 @@ To install and activate the environment, run the following command:
 conda env create -f environment.yml -p env
 conda activate ./env
 ```
-This repo is built on top of [StyleGAN3](https://github.com/NVlabs/stylegan3), so make sure that it runs on your system.
-
 ## Training
+###  Implementing Non-Flatness Score (NFS)​
+
+NFS – performance metric to evaluate the geometry quality of the 3D images ​
+Poor geometry can cause flatness -> insufficient depth variation to reflect real-life 3D images ​
+To calculate this score, a histogram of pixel intensity values were computed then normalized. Entropy was then used to compute the normalized histogram and averaged for the final score​
+A low NFS score = flat geometry/limited depth variation​
+A high NFS score = diverse geometry/good depth distribution​
+
+###    Changing Gradient Regularization for Camera Parameters​
+Changing regularization term for camera origin from 0.3 to 0.5​
+Changing regularization term for field of view from 0.03 to 0.05​
+Field of view measures how wide or narrow camera's perspective is​
+Changing regularization term for look-at direction from 0.003 to 0.005​
+Look-at direction shows where camera is pointed in 3D scene​
+Increasing the gradient regularization will result in an improved generalization by reducing overfitting and less sensitivity to noise in training data​
+Result: FID score increased to 29.43. This could be due to the reduction of diversity of the generated images that resulted from an improved generalization of images​
+
+###    Implementing Image Augmentation: rotation, shift, flip, brightness​
+Purpose: Improve model generalization through feeding the model with variations of images to help the generator and discriminator handle a broader range of scenarios ​
+This also provided diversity in camera parameters through simulating diverse viewpoints to mimic real-word variability in images ​
+Result: The generator can learn realistic geometry and depth of images in various settings to reduce overfitting to specific patterns​
+By implementing this, the FID score increased to 28.1 instead of decreasing. Although the idea of image augmentations seemed sound, this could be due to the augmented images deviating too much from the natural distribution of the real images, causing the generator to create fake images that look less than the real images ​
 
 ### Dataset preparation
 
